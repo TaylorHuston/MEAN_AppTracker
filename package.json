@@ -1,5 +1,9 @@
 {
-  "name" : "App Tracker",
-  "version" : "0.1.0",
-  "main" : "server.js"
+  "name": "App Tracker",
+  "version": "0.1.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.7"
+  }
 }
