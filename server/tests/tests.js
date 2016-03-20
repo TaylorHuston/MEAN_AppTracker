@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 
 describe('staticRoute', function () {
   it('should go to the home page', function (done) {
-    chai.request(server)
+    chai.request('http://localhost:8080/')
       .get('/')
       .end(function (err, res) {
         res.should.have.status(200);
