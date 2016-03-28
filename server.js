@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-var config = require('./server/config/config.js')
+var config = require('./config/config.js')
 
 
 mongoose.connection.on('open', function (ref) {
