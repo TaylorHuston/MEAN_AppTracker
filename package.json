@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "main": "server.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "express": "^4.13.4",
-    "mongoose": "^4.4.7"
+    "mongoose": "^4.4.7",
+    "morgan": "^1.7.0"
   }
 }
