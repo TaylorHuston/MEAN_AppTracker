@@ -43,8 +43,24 @@ dashboardRouter.get('/', function(req, res) {
   res.send("Dashboard");
 });
 
+dashboardRouter.get('/:_id', function(req, res) {
+  res.send("Dashboard " + req.params._id);
+});
+
+//Routes for logging in
+var loginRouter = express.Router();
+
+loginRouter.get('/', function (req, res) {
+  res.send('Login form');
+})
+
+loginRouter.post('/', function (req, res) {
+  res.send('Processing login form');
+})
+
 app.use('/admin', adminRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/login', loginRouter);
 
 //Start the server
 app.listen(config.port, function () {
