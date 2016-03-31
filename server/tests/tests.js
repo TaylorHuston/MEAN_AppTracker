@@ -14,4 +14,23 @@ describe('staticRoute', function () {
         done();
       });
   });
-})
+});
+
+describe('adminRoute', function () {
+  it('should go to the Admin Dashboard', function (done) {
+    chai.request('http://localhost:8080/')
+      .get('admin')
+      .end(function (err, res) {
+        res.should.have.status(200);
+        done();
+      });
+  });
+  it('should go to the Admin Dashboard - Users', function (done) {
+    chai.request('http://localhost:8080/')
+      .get('admin/users')
+      .end(function (err, res) {
+        res.should.have.status(200);
+        done();
+      });
+  });
+});
