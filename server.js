@@ -1,9 +1,10 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var bodyparser = require('body-parser');
-var morgan = require('morgan');
-var config = require('./config/config.js')
+var express = require('express'),
+    app = express(),
+    mongoose = require('mongoose'),
+    bodyParser = require('body-parser'),
+    morgan = require('morgan'),
+    config = require('./config/config.js'),
+    User = require('./app/models/user');
 
 mongoose.connection.on('open', function (ref) {
   console.log('Connected to Mongo server...');
@@ -24,6 +25,8 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, \Authorization');
   next();
 });
+
+app.use(morgan('dev'));
 
 //Static route location
 app.use(express.static(__dirname + '/public'));
